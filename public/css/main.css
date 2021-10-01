@@ -3,12 +3,14 @@ html {
   --white: #FFFFFF;
   --black: #000000;
   --background: #E5E5E5;
+  --filter: rgba(47, 47, 47, .26);
+
+  font:24px Montserrat;
 
   --h1: bold 2rem;
   --h2: 1.5rem;
   --text: 1rem;
 
-  font:24px Montserrat;
   color: var(--black);
   min-width: 380px;
 }
@@ -17,6 +19,11 @@ html *{
   margin: 0;
   
 }
+
+h2 {
+  font-size: var(--h2);
+}
+
 .outer_background {
   background-color: var(--background);
 }
@@ -564,7 +571,6 @@ footer{
     float: left;
     
     shape-outside: polygon(0 var(--top), var(--width) var(--top), var(--width) var(--bottom), 0 var(--bottom));
-    
     clip-path: polygon(0 0, calc(var(--width) - .5rem) 0, calc(var(--width) - .5rem) calc(var(--bottom) - var(--top)), 0 calc(var(--bottom) - var(--top)));
   }
 }
@@ -599,3 +605,66 @@ footer{
 
 
 ---------------------------------------*/
+
+
+.button_main {
+  padding: 1rem 2rem;
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.furniture_categories_title {
+  margin: 2rem 0 2rem;
+}
+
+.category_container {
+  height: 17rem;
+  position: relative;
+  margin: .5rem 0;
+}
+.category_image {
+  width: 100%;
+  height: 100%;
+
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position:0 -200px !important;
+  position: relative;
+
+  /* background-color: #2F2F2F !important; */
+  /* filte */
+
+}
+.category_image::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: var(--filter);
+  width: 100%;
+  height: 100%;
+}
+
+.category_controls_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+}
+.category_controls_container_inner {
+  margin: auto 0 auto 3.5rem;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.category_label {
+  color: var(--white);
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+.category_button {
+}

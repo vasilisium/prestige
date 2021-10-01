@@ -10,5 +10,11 @@
     </div>
   </section>
 
-  @include('main.about')
+  <!-- @include('main.about') -->
+  <section class="furniture_categories">
+    <h1 class="furniture_categories_title">Меблі на замовлення</h1>
+    @include('furniture_category')
+    @include('furniture_category')
+    @include('furniture_category')
+  </section>
 @endsection
